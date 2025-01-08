@@ -31,7 +31,7 @@ event.onMessage(evt, function(msg)
                 {
                     channel_id = channelId,
                     message = { 
-                        content = serde.encode("json", array.array( {a = 3}, {c = 2}, {count = count, stdout = stdout, loadstring = tostring(loadstring), time = time, executorType = type(discord_executor), executorTypeOf = typeof(discord_executor)} ) :: {string}) :: string?,
+                        content = serde.encode("json", array.array( {a = 3}, {c = 2}, {count = count, stdout = stdout, loadstring = tostring(loadstring), time = time, executorType = type(discord_executor), executorTypeOf = typeof(discord_executor)} )) :: string?,
                     }
                 }
             ))
