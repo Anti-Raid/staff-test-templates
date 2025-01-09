@@ -2,15 +2,15 @@ local discord = require "@antiraid/discord"
 local promise = require "@antiraid/promise"
 local global = require "@antiraid-ext/global" 
 local Primitives = require "@antiraid-core/primitives"
-local event = require "@antiraid-ext/event"
+local Message = require "@antiraid-ext/events/discord/Message"
 local array = require "@antiraid-ext/array"
 local serde = require "@lune/serde" 
  
 local evt: Primitives.Event, ctx: Primitives.TemplateContext = ...
-
+ 
 local count = global.update("count", 1, function(v: number) return v + 1 end)
 
-event.onMessage(evt, function(msg)
+Message(evt, function(msg)
     local time = task.wait(0)
 
     local channelId = msg.channel_id
