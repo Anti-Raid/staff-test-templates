@@ -30,18 +30,18 @@ Message(evt, function(msg)
             discord_executor:create_message(
                 {
                     channel_id = channelId,
-                    message = { 
-                        content = serde.encode("json", array.array( {a = 3}, {c = 2}, {count = count, stdout = stdout, loadstring = tostring(loadstring), time = time, executorType = type(discord_executor), executorTypeOf = typeof(discord_executor)} )) :: string?,
+                    data = { 
+                        content = serde.encode("json", array.array( {a = 4}, {c = 2}, {count = count, stdout = stdout, loadstring = tostring(loadstring), time = time, executorType = type(discord_executor), executorTypeOf = typeof(discord_executor)} )) :: string?,
                     }
                 }
             ))
       
         promise.yield(discord_executor:create_message({
             channel_id = channelId,
-            message = { 
+            data = { 
                 content = ("0 " .. typeof(lazyresp)) :: string?
             }
-        }))
+        })) 
       end 
       
     if msg.content == "AC" then
